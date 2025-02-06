@@ -1,10 +1,8 @@
 require 'nkf'
 class ImportInProgress < ActiveRecord::Base
   belongs_to :user
-  belongs_to :project
+  belongs_to :project, optional: true
 
-  attr_accessible :user_id, :col_sep, :encoding, :created, :csv_data
-  
   before_save :encode_csv_data
   
   private
