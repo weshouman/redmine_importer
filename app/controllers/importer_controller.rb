@@ -14,8 +14,6 @@ Journal.class_exec do
 end
 
 class ImporterController < ApplicationController
-  unloadable
-  
   before_filter :find_project
 
   ISSUE_ATTRS = [:id, :subject, :assigned_to, :fixed_version,
